@@ -792,7 +792,9 @@ class Post(Command):
                     with open(diff_path, 'rb') as fp:
                         parent_diff = fp.read()
                 except IOError as e:
-                    raise CommandError('Unable to open parent diff filename: %s' % e)
+                    raise CommandError(
+                        'Unable to open parent diff filename: %s' % e
+                    )
         else:
             self.revisions = get_revisions(self.tool, self.cmd_args)
 
